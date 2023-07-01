@@ -2,6 +2,9 @@ import config
 from build.compile import *
 import subprocess
 
+if (os.path.isdir("bin")): subprocess.run("rm -rf bin", shell=True)
+os.mkdir("bin")
+
 compileDir(f"boot/{config.BOOTLOADER}")
 compileDir(f"kernel")
 

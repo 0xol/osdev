@@ -1,3 +1,11 @@
 ## todo
-- [ ] boot
-- [ ] framebuffer and font rendering
+- [X] boot
+- [x] framebuffer and font rendering
+- [ ] debug to screen functions (puts etc)
+- [ ] debug print functions and basic implementation of printf (or something similiar)
+- [ ] pmm and vmm
+- [ ] SMP and scheduler
+- [ ] detect isa extensions implemented on the cpu and replace kernel functions with enhanced versions
+- [ ] vfs and devfs
+- [ ] ext2 support
+- [ ] userspace and system calls

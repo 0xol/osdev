@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
-const uint8_t font_bitmap[1520];
+#define FONT_WIDTH 8
+#define FONT_HEIGHT 16
+extern const uint8_t font_bitmap[4096];
 
 #endif
