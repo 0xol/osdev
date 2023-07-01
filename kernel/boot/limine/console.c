@@ -2,6 +2,7 @@
 #include <font.h>
 #include "limine.h"
 #include "start.h"
+#include <stdio.h>
 
 static volatile struct limine_framebuffer_request limine_fb = {
     .id = LIMINE_FRAMEBUFFER_REQUEST,
@@ -20,11 +21,6 @@ uint32_t background_colour = 0x00000000;
 uint32_t foreground_colour = 0xFFFFFFFF;
 int* limine_fb_addr;
 
-int limine_fb_init(void) {
-    limine_fb_addr = limine_fb.response->framebuffers[0]->address;
-    return 0;
-}
-
 int limine_fb_draw_char(char c) {
     for (int y = 0; y < FONT_HEIGHT; y++) {for (int x = 0; x < FONT_WIDTH; x++) {
         limine_fb_addr[SCREEN_NEXT_CHAR_POSITION + x + (y * SCREEN_WIDTH)] = background_colour;
@@ -35,7 +31,7 @@ int limine_fb_draw_char(char c) {
     return 0;
 }
 
-int putchar(char c) {
+int limine_fb_putchar(char c) {
     if (c < ' ') {
         switch (c) {
         case '\0':
@@ -78,4 +74,10 @@ int putchar(char c) {
         return 0;
     }
     return 1;
+}
+
+int limine_fb_init(void) {
+    limine_fb_addr = limine_fb.response->framebuffers[0]->address;
+    putchar = limine_fb_putchar;
+    return 0;
 }

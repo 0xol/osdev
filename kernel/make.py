@@ -7,5 +7,6 @@ os.mkdir("bin")
 
 compileDir(f"boot/{config.BOOTLOADER}")
 compileDir(f"kernel")
+compileDir(f"klibc")
 
 subprocess.run(f"{config.LD} {config.LDFLAGS} bin/*.o -o viz", shell=True, check=True)

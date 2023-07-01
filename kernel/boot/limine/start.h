@@ -2,6 +2,6 @@
 #define BOOT_LIMINE_START_H
 
 int limine_fb_init(void);
-int putchar(char c);
+int limine_fb_putchar(char c);
 
 #endif

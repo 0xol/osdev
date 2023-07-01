@@ -4,6 +4,8 @@
         "stdint.h": "c",
         "limine.h": "c",
         "font.h": "c",
-        "start.h": "c"
+        "start.h": "c",
+        "stdio.h": "c",
+        "printf.h": "c"
     }
 }
