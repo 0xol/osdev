@@ -71,6 +71,7 @@ int limine_fb_putchar(char c) {
 
         current_cursor_x++;
         if ((uint64_t)current_cursor_x == MAX_CURSOR_X) {current_cursor_x = 0; current_cursor_Y++;}
+        if ((uint64_t)current_cursor_Y == MAX_CURSOR_Y) {for(;;);}
         return 0;
     }
     return 1;
