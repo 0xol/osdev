@@ -6,6 +6,7 @@ if (os.path.isdir("bin")): subprocess.run("rm -rf bin", shell=True)
 os.mkdir("bin")
 
 compileDir(f"boot/{config.BOOTLOADER}")
+compileDir(f"arch/{config.ARCH}")
 compileDir(f"kernel")
 compileDir(f"klibc")
 
