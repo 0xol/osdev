@@ -43,7 +43,6 @@ int limine_fb_putchar(char c) {
             if (current_cursor_Y != 0) {current_cursor_Y--; current_cursor_x = MAX_CURSOR_X-1; return 0;}
             return 0;//we are at the start of the screen, backspace shouldnt do anything
         break;
-        
         case '\t':
             for (int x = 0; x < 4; x++) {putchar(' ');}
             return 0;
@@ -61,11 +60,10 @@ int limine_fb_putchar(char c) {
         break;
 
         default:
-            return 1;    
+            return 1;
         break;
         }
     }
-    
     if (c >= ' ' && c <= '~') {
         limine_fb_draw_char(c);
 

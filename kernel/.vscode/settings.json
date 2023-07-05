@@ -6,6 +6,7 @@
         "font.h": "c",
         "start.h": "c",
         "stdio.h": "c",
-        "printf.h": "c"
+        "printf.h": "c",
+        "gdt.h": "c"
     }
 }
